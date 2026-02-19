@@ -21,13 +21,14 @@
     <!-- Lucide Icons Library -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
-    <!-- Custom Styles -->
+    <!-- Estilos Customizados -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
+        /* Garantir que o texto sobre a imagem de destaque seja sempre legível */
         .hero-overlay::before {
             content: '';
             position: absolute;
@@ -35,7 +36,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(15, 23, 42, 0.7); /* bg-slate-900 com 70% de opacidade */
+            background: rgba(15, 23, 42, 0.7); /* Sobreposição escura */
             z-index: 1;
         }
     </style>
@@ -43,20 +44,18 @@
 
 <body class="bg-slate-900 text-gray-200">
 
-    <!-- =========== Header =========== -->
+    <!-- =========== Cabeçalho (Header) =========== -->
     <header id="header" class="bg-black/80 backdrop-blur-sm sticky top-0 z-50 shadow-lg border-b border-slate-800 transition-all duration-300">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Logo Placeholder -->
+            
+            <!-- Espaço do Logo -->
             <a href="#inicio" class="flex items-center">
-                <!-- ======================================================= -->
-                <!-- SEU LOGO AQUI: Substitua o src pela URL da sua logo -->
-                <!-- Tamanho recomendado: aprox. 150x50 pixels -->
-                <!-- ======================================================= -->
-                <img src="img/logo.png" alt="Logo Fazer Acontecer" class="h-10 md:h-12">
+                <!-- Ajuste de responsividade no logo: maior no desktop, proporcional no mobile -->
+                <img src="img/logo.png" alt="Logo Fazer Acontecer" class="h-12 md:h-16 w-auto object-contain" onerror="this.src='https://placehold.co/150x50/facc15/1e293b?text=LOGO'">
             </a>
 
-            <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold">
+            <!-- Navegação Desktop -->
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-semibold uppercase tracking-wider">
                 <a href="#sobre" class="text-gray-300 hover:text-yellow-400 transition-colors">Sobre Nós</a>
                 <a href="#oficinas" class="text-gray-300 hover:text-yellow-400 transition-colors">Oficinas</a>
                 <a href="#noticias" class="text-gray-300 hover:text-yellow-400 transition-colors">Notícias</a>
@@ -64,168 +63,168 @@
                 <a href="#parceiros" class="text-gray-300 hover:text-yellow-400 transition-colors">Parceiros</a>
             </nav>
             
-            <a href="#contato" class="hidden lg:inline-block bg-yellow-400 text-slate-900 font-bold px-5 py-2 rounded-lg hover:bg-yellow-300 transition-colors text-sm shadow-md">
+            <a href="#contato" class="hidden lg:inline-block bg-yellow-400 text-slate-900 font-bold px-6 py-2 rounded-lg hover:bg-yellow-300 transition-all shadow-md active:scale-95">
                 Apoie
             </a>
 
-            <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="lg:hidden text-yellow-400 focus:outline-none">
-                <i data-lucide="menu" class="w-7 h-7"></i>
+            <!-- Botão Menu Mobile -->
+            <button id="menu-btn" class="lg:hidden text-yellow-400 focus:outline-none p-2">
+                <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
         </div>
 
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden">
-            <nav class="flex flex-col space-y-2 px-4 pt-2 pb-4 border-t border-slate-700">
-                <a href="#sobre" class="text-gray-300 hover:bg-slate-700 hover:text-yellow-400 transition-colors p-2 rounded-md">Sobre Nós</a>
-                <a href="#oficinas" class="text-gray-300 hover:bg-slate-700 hover:text-yellow-400 transition-colors p-2 rounded-md">Oficinas</a>
-                <a href="#noticias" class="text-gray-300 hover:bg-slate-700 hover:text-yellow-400 transition-colors p-2 rounded-md">Notícias</a>
-                <a href="#transparencia" class="text-gray-300 hover:bg-slate-700 hover:text-yellow-400 transition-colors p-2 rounded-md">Transparência</a>
-                <a href="#parceiros" class="text-gray-300 hover:bg-slate-700 hover:text-yellow-400 transition-colors p-2 rounded-md">Parceiros</a>
-                <a href="#contato" class="w-full text-center mt-2 bg-yellow-400 text-slate-900 font-bold px-5 py-2 rounded-lg hover:bg-yellow-300 transition-colors shadow-md">Apoie</a>
+        <!-- Menu Mobile -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-black/95 border-t border-slate-800">
+            <nav class="flex flex-col space-y-1 px-4 pt-2 pb-6">
+                <a href="#sobre" class="text-gray-300 hover:text-yellow-400 transition-colors p-3 rounded-md border-b border-slate-800/50">Sobre Nós</a>
+                <a href="#oficinas" class="text-gray-300 hover:text-yellow-400 transition-colors p-3 rounded-md border-b border-slate-800/50">Oficinas</a>
+                <a href="#noticias" class="text-gray-300 hover:text-yellow-400 transition-colors p-3 rounded-md border-b border-slate-800/50">Notícias</a>
+                <a href="#transparencia" class="text-gray-300 hover:text-yellow-400 transition-colors p-3 rounded-md border-b border-slate-800/50">Transparência</a>
+                <a href="#parceiros" class="text-gray-300 hover:text-yellow-400 transition-colors p-3 rounded-md">Parceiros</a>
+                <a href="#contato" class="w-full text-center mt-4 bg-yellow-400 text-slate-900 font-bold px-5 py-3 rounded-lg shadow-md">Apoie</a>
             </nav>
         </div>
     </header>
 
-    <!-- =========== Main Content =========== -->
+    <!-- =========== Conteúdo Principal =========== -->
     <main>
         
-        <!-- Hero Section -->
-        <section id="inicio" class="relative hero-overlay bg-cover bg-center" style="background-image: url('https://scontent.fcgh9-1.fna.fbcdn.net/v/t39.30808-6/524420660_30445558958392064_5258983013256516349_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=xg8qnB-4VPQQ7kNvwE-RRoi&_nc_oc=AdngEuZFjP4fc7_lCr48hznfo_c8fRamyA4B1NFnoOEm4mGkVI5TiAonooqjJ343KBM&_nc_zt=23&_nc_ht=scontent.fcgh9-1.fna&_nc_gid=lfdPY5VFK95uN1FbVRmpLQ&oh=00_AfXErCBtY-Lrrd12NtfIE8LjQxcMvXLPJ_ISP4vJPT4xZw&oe=68BCF060');">
-            <div class="container mx-auto px-4 py-32 md:py-48 text-center relative z-10">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+        <!-- Hero Section (Destaque Principal) -->
+        <!-- Ajustado: min-h para mobile e bg-cover para garantir preenchimento total -->
+        <section id="inicio" class="relative hero-overlay bg-cover bg-center min-h-[60vh] flex items-center" style="background-image: url('https://scontent.fcgh9-1.fna.fbcdn.net/v/t39.30808-6/524420660_30445558958392064_5258983013256516349_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=xg8qnB-4VPQQ7kNvwE-RRoi&_nc_oc=AdngEuZFjP4fc7_lCr48hznfo_c8fRamyA4B1NFnoOEm4mGkVI5TiAonooqjJ343KBM&_nc_zt=23&_nc_ht=scontent.fcgh9-1.fna&_nc_gid=lfdPY5VFK95uN1FbVRmpLQ&oh=00_AfXErCBtY-Lrrd12NtfIE8LjQxcMvXLPJ_ISP4vJPT4xZw&oe=68BCF060');">
+            <div class="container mx-auto px-4 py-24 md:py-48 text-center relative z-10">
+                <h1 class="text-4xl md:text-7xl font-extrabold text-white leading-tight mb-6">
                     Transformando Vidas através da <span class="text-yellow-400">Arte</span>.
                 </h1>
-                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-                    Conectamos arte, cultura e educação para criar um futuro mais criativo e inclusivo.
+                <p class="text-lg md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10 font-medium">
+                    Conectamos arte, cultura e educação para criar um futuro mais criativo e inclusivo em Poá (SP).
                 </p>
-                <a href="#sobre" class="bg-yellow-400 text-slate-900 font-bold px-8 py-4 rounded-lg hover:bg-yellow-300 transition-colors shadow-lg hover:shadow-yellow-400/40 text-lg">
+                <a href="#sobre" class="inline-block bg-yellow-400 text-slate-900 font-bold px-10 py-4 rounded-full hover:bg-yellow-300 transition-all shadow-xl hover:shadow-yellow-400/20 text-lg uppercase tracking-wide transform hover:-translate-y-1">
                     Conheça Nossa História
                 </a>
             </div>
         </section>
 
-       <!-- Sobre Nós -->
-        <section id="sobre" class="py-16 md:py-24 bg-slate-800/50">
+        <!-- Seção: Sobre Nós -->
+        <section id="sobre" class="py-16 md:py-32 bg-slate-800/30">
             <div class="container mx-auto px-4">
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <h2 class="text-3xl md:text-4xl font-bold mb-4 text-yellow-400">Sobre Nós</h2>
-                        <div class="space-y-4 text-gray-300">
-                            <p>
-                                A Associação Cultural Núcleo de Teatro Amador Fazer Acontecer nasceu do desejo de transformar a realidade por meio da arte, da educação e da cultura. Há 25 anos, iniciamos nossas atividades em Poá (SP), promovendo oficinas de teatro e ações culturais que alcançam crianças, jovens, adultos e comunidades inteiras.
-                            </p>
-                            <p>
-                                Nossa história é marcada pela resistência e pela coletividade. Por muitos anos realizamos atividades em espaços cedidos, até que, após uma grande mobilização, conquistamos a permissão para utilizar uma antiga escola que estava abandonada. Hoje, esse espaço é a nossa sede, um verdadeiro ponto de cultura vivo, reconhecido oficialmente como Utilidade Pública e integrado à Rede Cultura Viva.
-                            </p>
-                            <p>
-                                Ao longo da trajetória, realizamos centenas de oficinas, espetáculos e festivais que impactaram diretamente milhares de pessoas, sempre acreditando no poder do teatro como ferramenta de inclusão, cidadania e transformação social.
-                            </p>
-                            <p>
-                                Nosso propósito é claro: fazer a arte acontecer onde ela é mais necessária, valorizando talentos locais, fortalecendo o teatro comunitário e formando novas gerações de cidadãos críticos, criativos e participativos.
-                            </p>
-                            <p>
-                                A cada projeto, reafirmamos nosso compromisso em levar a cultura para além dos palcos, transformando vidas e celebrando a potência das periferias e das comunidades que acreditam na arte como caminho de futuro.
-                            </p>
+                <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="order-2 md:order-1">
+                        <h2 class="text-3xl md:text-5xl font-bold mb-8 text-yellow-400">Sobre Nós</h2>
+                        <div class="space-y-5 text-gray-300 text-lg leading-relaxed">
+                            <p>A Associação Cultural Núcleo de Teatro Amador Fazer Acontecer nasceu do desejo de transformar a realidade por meio da arte, da educação e da cultura. Há 25 anos, iniciamos nossas atividades em Poá (SP), promovendo oficinas de teatro e ações culturais que alcançam crianças, jovens, adultos e comunidades inteiras.</p>
+                            <p>Nossa história é marcada pela resistência e pela coletividade. Por muitos anos realizamos atividades em espaços cedidos, até que, após uma grande mobilização, conquistamos a permissão para utilizar uma antiga escola que estava abandonada. Hoje, esse espaço é a nossa sede, um verdadeiro ponto de cultura vivo, reconhecido oficialmente como Utilidade Pública e integrado à Rede Cultura Viva.</p>
+                            <p>Ao longo da trajetória, realizamos centenas de oficinas, espetáculos e festivais que impactaram diretamente milhares de pessoas, sempre acreditando no poder do teatro como ferramenta de inclusão, cidadania e transformação social.</p>
+                            <p>Nosso propósito é claro: fazer a arte acontecer onde ela é mais necessária, valorizando talentos locais, fortalecendo o teatro comunitário e formando novas gerações de cidadãos críticos, criativos e participativos.</p>
+                            <p>A cada projeto, reafirmamos nosso compromisso em levar a cultura para além dos palcos, transformando vidas e celebrando a potência das periferias e das comunidades que acreditam na arte como caminho de futuro.</p>
                         </div>
                     </div>
-                    <div>
-                        <img src="https://scontent.fcgh9-1.fna.fbcdn.net/v/t39.30808-6/474874382_2573725102813390_4271305972384554528_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=EIWsB60ZpPQQ7kNvwGLNxIm&_nc_oc=AdlNllsE4MBtzUjQJa6-JOZTo3umuQniugDpEFkEPW-LC2JU9Uf93tN3F9pIq6C_JzA&_nc_zt=23&_nc_ht=scontent.fcgh9-1.fna&_nc_gid=4oA05TdFdj66xRz5gnHBEw&oh=00_AfX4g0OrVPfIPnASOI7Anx5PqMRSm8gR9rANrIaf-JtwWg&oe=68BCFCED" alt="Equipe Fazer Acontecer" class="rounded-lg shadow-2xl">
+                    <!-- Imagem responsiva alinhada -->
+                    <div class="order-1 md:order-2">
+                        <img src="https://scontent.fcgh9-1.fna.fbcdn.net/v/t39.30808-6/474874382_2573725102813390_4271305972384554528_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=EIWsB60ZpPQQ7kNvwGLNxIm&_nc_oc=AdlNllsE4MBtzUjQJa6-JOZTo3umuQniugDpEFkEPW-LC2JU9Uf93tN3F9pIq6C_JzA&_nc_zt=23&_nc_ht=scontent.fcgh9-1.fna&_nc_gid=4oA05TdFdj66xRz5gnHBEw&oh=00_AfX4g0OrVPfIPnASOI7Anx5PqMRSm8gR9rANrIaf-JtwWg&oe=68BCFCED" 
+                             alt="Equipe Fazer Acontecer" 
+                             class="rounded-2xl shadow-2xl w-full object-cover aspect-[4/3] md:aspect-auto">
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- Oficinas (Galeria de Fotos) -->
-        <section id="oficinas" class="py-16 md:py-24">
+        <!-- Seção: Oficinas (Galeria) -->
+        <section id="oficinas" class="py-20 md:py-32">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-yellow-400">Nossas Oficinas</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Item da Galeria 1 -->
-                    <div class="group relative overflow-hidden rounded-lg shadow-lg">
-                        <img src="https://scontent.fcgh9-1.fna.fbcdn.net/v/t39.30808-6/537648012_806736202017106_8838324174017244845_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=DEj7V3Gf1QAQ7kNvwFKaeLW&_nc_oc=AdlcmXfTPOAQmH26VGAVKPJTt5FFptJTps9CC7dwVTGlF7MOteH0l_emUE0baIRdPM0&_nc_zt=23&_nc_ht=scontent.fcgh9-1.fna&_nc_gid=WafkAnsNiwYqtlCAMoA71w&oh=00_AfU7b0nVKaD0qIQBnafIz2_t7XLYi6VHxjYqyJ656rB2CQ&oe=68BCF442" alt="Oficina de Teatro" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black/60 flex items-end p-6">
-                            <h3 class="text-white text-2xl font-bold">Curso Livre de Teatro</h3>
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-16 text-yellow-400">Nossas Oficinas</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                    <!-- Item 1 -->
+                    <div class="group relative overflow-hidden rounded-2xl shadow-xl aspect-[4/5] md:aspect-square">
+                        <img src="https://scontent.fcgh9-1.fna.fbcdn.net/v/t39.30808-6/537648012_806736202017106_8838324174017244845_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=DEj7V3Gf1QAQ7kNvwFKaeLW&_nc_oc=AdlcmXfTPOAQmH26VGAVKPJTt5FFptJTps9CC7dwVTGlF7MOteH0l_emUE0baIRdPM0&_nc_zt=23&_nc_ht=scontent.fcgh9-1.fna&_nc_gid=WafkAnsNiwYqtlCAMoA71w&oh=00_AfU7b0nVKaD0qIQBnafIz2_t7XLYi6VHxjYqyJ656rB2CQ&oe=68BCF442" 
+                             alt="Curso Livre de Teatro" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end p-8">
+                            <h3 class="text-white text-2xl md:text-3xl font-bold">Curso Livre de Teatro</h3>
                         </div>
                     </div>
-                    <!-- Item da Galeria 2 -->
-                    <div class="group relative overflow-hidden rounded-lg shadow-lg">
-                        <img src="https://scontent.fcgh9-1.fna.fbcdn.net/v/t39.30808-6/481677128_667968732560521_7576394156625654723_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=4QLyJKCyuAEQ7kNvwGdZqol&_nc_oc=AdlKxgYQEm1D9XHpv6ciqJ7YXdFJj--Hq5mS79JJJ8Iv3PgVE6QYrMm-THAID7GybXo&_nc_zt=23&_nc_ht=scontent.fcgh9-1.fna&_nc_gid=yPJ3C_2P68FO8JcihuhktQ&oh=00_AfVX7Fm2ZA7aDtNntTq_5S4NWX2dALrNQ2pwr9i-YqapXw&oe=68BCDC44" alt="Pesquisa Teatral" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black/60 flex items-end p-6">
-                            <h3 class="text-white text-2xl font-bold">Pesquisa Teatral</h3>
+                    <!-- Item 2 -->
+                    <div class="group relative overflow-hidden rounded-2xl shadow-xl aspect-[4/5] md:aspect-square">
+                        <img src="https://scontent.fcgh9-1.fna.fbcdn.net/v/t39.30808-6/481677128_667968732560521_7576394156625654723_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=4QLyJKCyuAEQ7kNvwGdZqol&_nc_oc=AdlKxgYQEm1D9XHpv6ciqJ7YXdFJj--Hq5mS79JJJ8Iv3PgVE6QYrMm-THAID7GybXo&_nc_zt=23&_nc_ht=scontent.fcgh9-1.fna&_nc_gid=yPJ3C_2P68FO8JcihuhktQ&oh=00_AfVX7Fm2ZA7aDtNntTq_5S4NWX2dALrNQ2pwr9i-YqapXw&oe=68BCDC44" 
+                             alt="Pesquisa Teatral" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end p-8">
+                            <h3 class="text-white text-2xl md:text-3xl font-bold">Pesquisa Teatral</h3>
                         </div>
                     </div>
-                    <!-- Item da Galeria 3 -->
-                    <div class="group relative overflow-hidden rounded-lg shadow-lg">
-                        <img src="https://scontent.fcgh9-1.fna.fbcdn.net/v/t39.30808-6/481959501_671972992160095_351851717975739572_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=UwaKFH_sS9sQ7kNvwHEtcFu&_nc_oc=AdlHnU1nblVzjzEaSVdt1s7cO-95902_HsQGZISuqPJtbPgRPoIilpluHpLQ4cNLAJ0&_nc_zt=23&_nc_ht=scontent.fcgh9-1.fna&_nc_gid=fL3R_gPSy6aas0rIqjOWCQ&oh=00_AfW5XOs3DYPUDU5lrZ5dKxQZ10ybEcsDaAtI7S78iIBcyw&oe=68BD0573" alt="Cinema Comunitário" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <div class="absolute inset-0 bg-black/60 flex items-end p-6">
-                            <h3 class="text-white text-2xl font-bold">Núcleo de Teatro Amador</h3>
+                    <!-- Item 3 -->
+                    <div class="group relative overflow-hidden rounded-2xl shadow-xl aspect-[4/5] md:aspect-square">
+                        <img src="https://scontent.fcgh9-1.fna.fbcdn.net/v/t39.30808-6/481959501_671972992160095_351851717975739572_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=UwaKFH_sS9sQ7kNvwHEtcFu&_nc_oc=AdlHnU1nblVzjzEaSVdt1s7cO-95902_HsQGZISuqPJtbPgRPoIilpluHpLQ4cNLAJ0&_nc_zt=23&_nc_ht=scontent.fcgh9-1.fna&_nc_gid=fL3R_gPSy6aas0rIqjOWCQ&oh=00_AfW5XOs3DYPUDU5lrZ5dKxQZ10ybEcsDaAtI7S78iIBcyw&oe=68BD0573" 
+                             alt="Núcleo de Teatro Amador" 
+                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end p-8">
+                            <h3 class="text-white text-2xl md:text-3xl font-bold">Núcleo de Teatro Amador</h3>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Notícias -->
-        <section id="noticias" class="py-16 md:py-24 bg-slate-800/50">
+        <!-- Seção: Notícias -->
+        <section id="noticias" class="py-20 md:py-32 bg-slate-800/50">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-yellow-400">Últimas Notícias</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-16 text-yellow-400">Últimas Notícias</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
                     <!-- Notícia 1 -->
-                    <div class="bg-slate-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://placehold.co/600x400/1e293b/fefefe?text=Imagem+da+Notícia+1" alt="Notícia 1" class="w-full h-48 object-cover">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <p class="text-sm text-yellow-400 mb-2">01 de Setembro, 2025</p>
-                            <h3 class="text-xl font-bold mb-3">Festival de Teatro Amador Abre Inscrições</h3>
-                            <p class="text-gray-400 text-sm mb-4 flex-grow">Estão abertas as inscrições para o nosso festival anual. Grupos de todo o estado podem participar...</p>
-                            <a href="#" class="text-red-500 font-semibold hover:text-red-400 self-start">Leia Mais &rarr;</a>
+                    <div class="bg-slate-800 rounded-2xl shadow-xl overflow-hidden flex flex-col transform transition-all hover:-translate-y-2 border border-slate-700">
+                        <img src="https://placehold.co/600x400/1e293b/fefefe?text=Imagem+da+Notícia+1" alt="Notícia 1" class="w-full h-56 object-cover">
+                        <div class="p-8 flex flex-col flex-grow">
+                            <p class="text-sm text-yellow-400 font-bold mb-3 uppercase tracking-wide">01 de Setembro, 2025</p>
+                            <h3 class="text-xl md:text-2xl font-bold mb-4 text-white">Festival de Teatro Amador Abre Inscrições</h3>
+                            <p class="text-gray-400 mb-6 flex-grow leading-relaxed">Estão abertas as inscrições para o nosso festival anual. Grupos de todo o estado podem participar...</p>
+                            <a href="#" class="text-red-500 font-bold hover:text-red-400 flex items-center transition-colors">Leia Mais <i data-lucide="chevron-right" class="w-5 h-5 ml-1"></i></a>
                         </div>
                     </div>
                     <!-- Notícia 2 -->
-                    <div class="bg-slate-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://placehold.co/600x400/1e293b/fefefe?text=Imagem+da+Notícia+2" alt="Notícia 2" class="w-full h-48 object-cover">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <p class="text-sm text-yellow-400 mb-2">15 de Agosto, 2025</p>
-                            <h3 class="text-xl font-bold mb-3">Nova Parceria Firmada com Empresa Local</h3>
-                            <p class="text-gray-400 text-sm mb-4 flex-grow">Com grande alegria, anunciamos nossa nova parceria que irá financiar oficinas de cinema para 50 jovens...</p>
-                            <a href="#" class="text-red-500 font-semibold hover:text-red-400 self-start">Leia Mais &rarr;</a>
+                    <div class="bg-slate-800 rounded-2xl shadow-xl overflow-hidden flex flex-col transform transition-all hover:-translate-y-2 border border-slate-700">
+                        <img src="https://placehold.co/600x400/1e293b/fefefe?text=Imagem+da+Notícia+2" alt="Notícia 2" class="w-full h-56 object-cover">
+                        <div class="p-8 flex flex-col flex-grow">
+                            <p class="text-sm text-yellow-400 font-bold mb-3 uppercase tracking-wide">15 de Agosto, 2025</p>
+                            <h3 class="text-xl md:text-2xl font-bold mb-4 text-white">Nova Parceria Firmada com Empresa Local</h3>
+                            <p class="text-gray-400 mb-6 flex-grow leading-relaxed">Com grande alegria, anunciamos nossa nova parceria que irá financiar oficinas de cinema para 50 jovens...</p>
+                            <a href="#" class="text-red-500 font-bold hover:text-red-400 flex items-center transition-colors">Leia Mais <i data-lucide="chevron-right" class="w-5 h-5 ml-1"></i></a>
                         </div>
                     </div>
                     <!-- Notícia 3 -->
-                    <div class="bg-slate-800 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img src="https://placehold.co/600x400/1e293b/fefefe?text=Imagem+da+Notícia+3" alt="Notícia 3" class="w-full h-48 object-cover">
-                        <div class="p-6 flex flex-col flex-grow">
-                            <p class="text-sm text-yellow-400 mb-2">28 de Julho, 2025</p>
-                            <h3 class="text-xl font-bold mb-3">Espetáculo "Raízes" Emociona Plateia</h3>
-                            <p class="text-gray-400 text-sm mb-4 flex-grow">Nossa mais recente produção, "Raízes", estreou com casa cheia e aplausos calorosos do público...</p>
-                            <a href="#" class="text-red-500 font-semibold hover:text-red-400 self-start">Leia Mais &rarr;</a>
+                    <div class="bg-slate-800 rounded-2xl shadow-xl overflow-hidden flex flex-col transform transition-all hover:-translate-y-2 border border-slate-700">
+                        <img src="https://placehold.co/600x400/1e293b/fefefe?text=Imagem+da+Notícia+3" alt="Notícia 3" class="w-full h-56 object-cover">
+                        <div class="p-8 flex flex-col flex-grow">
+                            <p class="text-sm text-yellow-400 font-bold mb-3 uppercase tracking-wide">28 de Julho, 2025</p>
+                            <h3 class="text-xl md:text-2xl font-bold mb-4 text-white">Espetáculo "Raízes" Emociona Plateia</h3>
+                            <p class="text-gray-400 mb-6 flex-grow leading-relaxed">Nossa mais recente produção, "Raízes", estreou com casa cheia e aplausos calorosos do público...</p>
+                            <a href="#" class="text-red-500 font-bold hover:text-red-400 flex items-center transition-colors">Leia Mais <i data-lucide="chevron-right" class="w-5 h-5 ml-1"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Portal de Transparência -->
-        <section id="transparencia" class="py-16 md:py-24">
+        <!-- Seção: Portal de Transparência -->
+        <section id="transparencia" class="py-20 md:py-32">
             <div class="container mx-auto px-4 text-center">
-                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-yellow-400">Portal de Transparência</h2>
-                 <p class="text-gray-400 max-w-2xl mx-auto mb-12">Compromisso com a clareza na gestão de nossos recursos e no impacto que geramos.</p>
-                 <div class="max-w-4xl mx-auto bg-slate-800/50 rounded-lg p-8">
-                     <div class="grid sm:grid-cols-2 gap-8 text-left">
+                 <h2 class="text-3xl md:text-5xl font-bold mb-6 text-yellow-400">Portal de Transparência</h2>
+                 <p class="text-gray-400 max-w-2xl mx-auto mb-16 text-lg">Compromisso com a clareza na gestão de nossos recursos e no impacto que geramos na comunidade.</p>
+                 <div class="max-w-5xl mx-auto bg-slate-800/40 rounded-3xl p-8 md:p-12 border border-slate-700">
+                     <div class="grid md:grid-cols-2 gap-12 text-left">
                         <!-- Relatórios Financeiros -->
-                        <div>
-                           <h3 class="text-xl font-bold text-red-500 mb-4 border-b-2 border-red-500/30 pb-2">Relatórios Financeiros</h3>
-                           <ul class="space-y-3">
-                               <li><a href="#" class="flex items-center text-gray-300 hover:text-yellow-400 transition-colors"><i data-lucide="file-text" class="w-5 h-5 mr-3 text-yellow-400"></i>Balanço Anual 2024</a></li>
-                               <li><a href="#" class="flex items-center text-gray-300 hover:text-yellow-400 transition-colors"><i data-lucide="file-text" class="w-5 h-5 mr-3 text-yellow-400"></i>Relatório Semestral 2025.1</a></li>
+                        <div class="space-y-6">
+                           <h3 class="text-2xl font-bold text-red-500 flex items-center border-b border-red-500/20 pb-4"><i data-lucide="bar-chart-3" class="w-7 h-7 mr-3"></i>Relatórios Financeiros</h3>
+                           <ul class="space-y-4">
+                               <li><a href="#" class="flex items-center text-gray-300 hover:text-yellow-400 transition-colors bg-slate-800/60 p-4 rounded-xl border border-slate-700 hover:border-yellow-400/50"><i data-lucide="file-text" class="w-6 h-6 mr-4 text-yellow-400"></i>Balanço Anual 2024</a></li>
+                               <li><a href="#" class="flex items-center text-gray-300 hover:text-yellow-400 transition-colors bg-slate-800/60 p-4 rounded-xl border border-slate-700 hover:border-yellow-400/50"><i data-lucide="file-text" class="w-6 h-6 mr-4 text-yellow-400"></i>Relatório Semestral 2025.1</a></li>
                            </ul>
                         </div>
                         <!-- Convênios e Contratos -->
-                        <div>
-                           <h3 class="text-xl font-bold text-red-500 mb-4 border-b-2 border-red-500/30 pb-2">Convênios e Contratos</h3>
-                           <ul class="space-y-3">
-                               <li><a href="#" class="flex items-center text-gray-300 hover:text-yellow-400 transition-colors"><i data-lucide="file-text" class="w-5 h-5 mr-3 text-yellow-400"></i>Termo de Fomento Municipal</a></li>
-                               <li><a href="#" class="flex items-center text-gray-300 hover:text-yellow-400 transition-colors"><i data-lucide="file-text" class="w-5 h-5 mr-3 text-yellow-400"></i>Contrato de Patrocínio XYZ</a></li>
+                        <div class="space-y-6">
+                           <h3 class="text-2xl font-bold text-red-500 flex items-center border-b border-red-500/20 pb-4"><i data-lucide="scroll" class="w-7 h-7 mr-3"></i>Convênios e Contratos</h3>
+                           <ul class="space-y-4">
+                               <li><a href="#" class="flex items-center text-gray-300 hover:text-yellow-400 transition-colors bg-slate-800/60 p-4 rounded-xl border border-slate-700 hover:border-yellow-400/50"><i data-lucide="file-text" class="w-6 h-6 mr-4 text-yellow-400"></i>Termo de Fomento Municipal</a></li>
+                               <li><a href="#" class="flex items-center text-gray-300 hover:text-yellow-400 transition-colors bg-slate-800/60 p-4 rounded-xl border border-slate-700 hover:border-yellow-400/50"><i data-lucide="file-text" class="w-6 h-6 mr-4 text-yellow-400"></i>Contrato de Patrocínio XYZ</a></li>
                            </ul>
                         </div>
                      </div>
@@ -233,77 +232,84 @@
             </div>
         </section>
         
-        <!-- Parceiros -->
-        <section id="parceiros" class="py-16 md:py-24 bg-slate-800/50">
+        <!-- Seção: Parceiros -->
+        <section id="parceiros" class="py-20 md:py-32 bg-slate-800/30">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 text-yellow-400">Nossos Parceiros</h2>
-                <div class="flex flex-wrap justify-center items-center gap-12">
-                    <img src="https://placehold.co/150x60/ffffff/9ca3af?text=PARCEIRO+1" alt="Logo Parceiro 1" class="h-12 opacity-60 hover:opacity-100 transition-opacity">
-                    <img src="https://placehold.co/150x60/ffffff/9ca3af?text=PARCEIRO+2" alt="Logo Parceiro 2" class="h-12 opacity-60 hover:opacity-100 transition-opacity">
-                    <img src="https://placehold.co/150x60/ffffff/9ca3af?text=PARCEIRO+3" alt="Logo Parceiro 3" class="h-12 opacity-60 hover:opacity-100 transition-opacity">
-                    <img src="https://placehold.co/150x60/ffffff/9ca3af?text=PARCEIRO+4" alt="Logo Parceiro 4" class="h-12 opacity-60 hover:opacity-100 transition-opacity">
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-16 text-yellow-400 uppercase tracking-widest">Nossos Parceiros</h2>
+                <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+                    <img src="https://placehold.co/150x60/ffffff/9ca3af?text=PARCEIRO+1" alt="Logo Parceiro 1" class="h-10 md:h-14 opacity-50 hover:opacity-100 transition-all grayscale hover:grayscale-0">
+                    <img src="https://placehold.co/150x60/ffffff/9ca3af?text=PARCEIRO+2" alt="Logo Parceiro 2" class="h-10 md:h-14 opacity-50 hover:opacity-100 transition-all grayscale hover:grayscale-0">
+                    <img src="https://placehold.co/150x60/ffffff/9ca3af?text=PARCEIRO+3" alt="Logo Parceiro 3" class="h-10 md:h-14 opacity-50 hover:opacity-100 transition-all grayscale hover:grayscale-0">
+                    <img src="https://placehold.co/150x60/ffffff/9ca3af?text=PARCEIRO+4" alt="Logo Parceiro 4" class="h-10 md:h-14 opacity-50 hover:opacity-100 transition-all grayscale hover:grayscale-0">
                 </div>
             </div>
         </section>
 
     </main>
     
-    <!-- =========== Footer =========== -->
+    <!-- =========== Rodapé (Footer) =========== -->
     <footer id="contato" class="bg-black border-t border-slate-800">
-        <div class="container mx-auto px-4 py-12">
-            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
-                <div>
-                    <h3 class="text-lg font-bold text-yellow-400 mb-3">FAZER ACONTECER</h3>
-                    <p class="text-sm text-gray-400">Associação Cultural Núcleo de Teatro Amador Fazer Acontecer.</p>
+        <div class="container mx-auto px-4 py-20">
+            <div class="grid md:grid-cols-3 gap-16 text-center md:text-left">
+                <!-- Info Institucional -->
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-black text-yellow-400">FAZER ACONTECER</h3>
+                    <p class="text-gray-400 leading-relaxed">Associação Cultural Núcleo de Teatro Amador Fazer Acontecer. Criatividade e compromisso com o social.</p>
                 </div>
-                <div>
-                    <h3 class="text-lg font-bold text-yellow-400 mb-3">Contato</h3>
-                    <p class="text-sm text-gray-400">nucleodeteatrofazeracontecer@gmail.com</p>
-                    <p class="text-sm text-gray-400">(11) 98926-4697</p>
+                <!-- Contato -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-white">Fale Conosco</h3>
+                    <div class="space-y-2 text-gray-400">
+                        <p class="flex items-center justify-center md:justify-start"><i data-lucide="mail" class="w-5 h-5 mr-3 text-red-500"></i> nucleodeteatrofazeracontecer@gmail.com</p>
+                        <p class="flex items-center justify-center md:justify-start"><i data-lucide="phone" class="w-5 h-5 mr-3 text-red-500"></i> (11) 98926-4697</p>
+                    </div>
                 </div>
-                <div>
-                    <h3 class="text-lg font-bold text-yellow-400 mb-3">Siga-nos</h3>
-                    <div class="flex justify-center md:justify-start space-x-4">
-                        <a href="https://www.instagram.com/fazeracontecer_oficial/" class="text-gray-400 hover:text-yellow-400"><i data-lucide="instagram"></i></a>
-                        <a href="https://www.facebook.com/fazeracontecerteatro/" class="text-gray-400 hover:text-yellow-400"><i data-lucide="facebook"></i></a>
-                        <a href="https://www.youtube.com/@teatrofazeracontecer1970" class="text-gray-400 hover:text-yellow-400"><i data-lucide="youtube"></i></a>
+                <!-- Redes Sociais -->
+                <div class="space-y-4">
+                    <h3 class="text-xl font-bold text-white">Siga Nossa Arte</h3>
+                    <div class="flex justify-center md:justify-start space-x-6">
+                        <a href="https://www.instagram.com/fazeracontecer_oficial/" target="_blank" class="text-gray-400 hover:text-yellow-400 transition-all transform hover:scale-125"><i data-lucide="instagram" class="w-7 h-7"></i></a>
+                        <a href="https://www.facebook.com/fazeracontecerteatro/" target="_blank" class="text-gray-400 hover:text-yellow-400 transition-all transform hover:scale-125"><i data-lucide="facebook" class="w-7 h-7"></i></a>
+                        <a href="https://www.youtube.com/@teatrofazeracontecer1970" target="_blank" class="text-gray-400 hover:text-yellow-400 transition-all transform hover:scale-125"><i data-lucide="youtube" class="w-7 h-7"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-slate-800 mt-8 pt-6 text-center text-sm text-gray-500">
-                &copy; <span id="current-year"></span> Fazer Acontecer. Todos os direitos reservados.
+            <!-- Direitos e Ano -->
+            <div class="border-t border-slate-900 mt-16 pt-8 text-center text-sm text-gray-500 font-medium">
+                &copy; <span id="current-year"></span> Fazer Acontecer. Desenvolvido com <i data-lucide="heart" class="w-4 h-4 inline text-red-600"></i> para a Cultura Brasileira.
             </div>
         </div>
     </footer>
 
-
-    <!-- =========== JavaScript =========== -->
+    <!-- =========== Scripts (Interatividade e Ícones) =========== -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // --- Mobile Menu Toggle ---
+            // --- Controle do Menu Mobile ---
             const menuBtn = document.getElementById('menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuLinks = mobileMenu.querySelectorAll('a');
 
-            menuBtn.addEventListener('click', () => {
+            function toggleMenu() {
+                const isHidden = mobileMenu.classList.contains('hidden');
                 mobileMenu.classList.toggle('hidden');
-                const iconName = mobileMenu.classList.contains('hidden') ? 'menu' : 'x';
-                menuBtn.innerHTML = `<i data-lucide="${iconName}" class="w-7 h-7"></i>`;
+                // Troca o ícone de 'menu' para 'x' (fechar)
+                menuBtn.innerHTML = `<i data-lucide="${isHidden ? 'x' : 'menu'}" class="w-8 h-8"></i>`;
                 lucide.createIcons();
-            });
+            }
+
+            menuBtn.addEventListener('click', toggleMenu);
             
+            // Fecha o menu ao clicar em um link (navegação fluida)
             mobileMenuLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                   mobileMenu.classList.add('hidden');
-                   menuBtn.innerHTML = `<i data-lucide="menu" class="w-7 h-7"></i>`;
-                   lucide.createIcons();
+                   if(!mobileMenu.classList.contains('hidden')) toggleMenu();
                 });
             });
 
-            // --- Set current year in footer ---
+            // --- Ano Atual Automático ---
             document.getElementById('current-year').textContent = new Date().getFullYear();
 
-            // --- Initialize Lucide Icons ---
+            // --- Iniciar Ícones Lucide ---
             lucide.createIcons();
         });
     </script>
